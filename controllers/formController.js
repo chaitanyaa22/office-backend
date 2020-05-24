@@ -61,7 +61,7 @@ module.exports.deleteForm = async function (req, res){
 }
 
 module.exports.getForm = async function (req, res){
-    let forms = await formModel.find({'departmentNo' : req.body.departmentNo})
+    let forms = await formModel.find()
     console.log(forms)
     res.status(200).send(forms) 
 }
