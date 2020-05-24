@@ -59,3 +59,11 @@ module.exports.deleteForm = async function (req, res){
         res.status(404).send('Not authorized')
     }
 }
+
+module.exports.getForm = async function (req, res){
+    let user = await formModel.findOne({email: req.body.email})
+    if(user !== null){
+       let forms = await formModel.find()
+    res.status(200).send(forms) 
+    }   
+}
