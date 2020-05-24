@@ -64,6 +64,9 @@ module.exports.getForm = async function (req, res){
     let user = await formModel.findOne({email: req.body.email})
     if(user !== null){
        let forms = await formModel.find()
-    res.status(200).send(forms) 
-    }   
+       res.status(200).send(forms) 
+    }
+    else{
+        res.status(404)
+    }  
 }
