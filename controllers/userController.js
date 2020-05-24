@@ -25,7 +25,7 @@ module.exports.signUp = async function (req, res) {
 
     }
     else {
-        res.status(409).send("Already exists")
+        res.status(409) //Already Exists
     }
 }
 
@@ -44,11 +44,11 @@ module.exports.logIn = async function(req, res){
             res.status(200).send({user: user, others: others, sentForms: sentForms, receivedForms: receivedForms, departmentForms: departmentForms})
         }
         else{
-            res.status(401).send("Incorrect Password")
+            res.status(401) //Incorrect Password
         }
      }
      else{
-         res.status(404).send("User not found")
+         res.status(404) //User not found
      }
     
 }

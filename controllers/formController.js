@@ -6,6 +6,7 @@ module.exports.createForm = function (req, res) {
         isActedOn: false,
         isApproved: false,
         createdBy: req.body.createdBy,
+        createdByName: req.body.createdByName,
         createdTo: req.body.createdTo,
         departmentNo: req.body.departmentNo,
         message: req.body.message
