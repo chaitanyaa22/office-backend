@@ -5,7 +5,8 @@ var FormSchema = new Schema({
     isActedOn: {type: Boolean},
     isApproved: {type: Boolean},
     createdBy: {type: String},
-    createdByName: {type: String}, 
+    createdByName: {type: String},
+    createdByDepartment: {type: String},
     createdTo: {type: String},
     departmentNo: {type: Number},
     message: {type: String}
