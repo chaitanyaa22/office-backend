@@ -62,6 +62,11 @@ module.exports.deleteForm = async function (req, res){
 
 module.exports.getForm = async function (req, res){
     let forms = await formModel.find({'departmentNo': Number(req.body.departmentNo)})
-    console.log(forms)
     res.status(200).send(forms) 
+}
+
+module.exports.getSentForm = async function (req, res){
+    let forms = await formModel.find({'createdBy': req.body.email})
+    res.status(200).send(forms)
+
 }

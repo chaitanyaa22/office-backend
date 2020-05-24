@@ -21,6 +21,7 @@ router.post('/department', departmentController.createDepartment)
 
 router.post('/getform', formController.getForm)
 router.post('/form', formController.createForm)
+router.post('/sentform', formController.getSentForm)
 router.put('/editform', formController.editForm)
 router.delete('/deleteform', formController.deleteForm)
 

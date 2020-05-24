@@ -35,13 +35,10 @@ module.exports.logIn = async function(req, res){
         let pass = await bcrypt.compareSync(req.body.password, user.password);
         if(pass){
             let others = await userModel.find({'departmentNo' : { $ne: user.departmentNo}})
-            let sentForms = await formModel.find({'createdBy' : user.email})
-            let receivedForms = await formModel.find({'createdTo' : user.email})
-            let departmentForms = await formModel.find({'departmentNo' : user.departmentNo})
             req.session.user = {
                 id: user._id
             }
-            res.status(200).send({user: user, others: others, sentForms: sentForms, receivedForms: receivedForms, departmentForms: departmentForms})
+            res.status(200).send({user: user, others: others})
         }
         else{
             res.status(401) //Incorrect Password
