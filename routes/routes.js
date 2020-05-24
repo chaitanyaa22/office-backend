@@ -19,7 +19,7 @@ router.post('/department', departmentController.createDepartment)
 //     }
 // })
 
-router.post('/getform', formController.getForm)
+router.get('/getform', formController.getForm)
 router.post('/form', formController.createForm)
 router.put('/editform', formController.editForm)
 router.delete('/deleteform', formController.deleteForm)
