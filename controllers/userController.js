@@ -41,11 +41,11 @@ module.exports.logIn = async function(req, res){
             res.status(200).send({user: user, others: others})
         }
         else{
-            res.status(401) //Incorrect Password
+            res.status(401).send('Incorrect Password') //Incorrect Password
         }
      }
      else{
-         res.status(404) //User not found
+         res.status(404).send('User not found') //User not found
      }
     
 }
